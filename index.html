@@ -72,7 +72,7 @@
     <img src="https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO1.png" alt="Sobre Cerrado" id="step-image">
   </div>
   <div class="download-link" id="download-link">
-    <a href="https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO3.png" download="Invitacion-Caleb-y-Natalia.png">Descargar Invitación</a>
+    <a id="download-button" href="https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/INVITACION.png" download="INVITACION.png">Descargar Invitación</a>
   </div>
 
   <script>
@@ -88,10 +88,10 @@
         textInfo.textContent = "Falta un toque más para abrir el sobre"; // Cambia el texto
         step++;
       } else if (step === 2) {
-        stepImage.src = "https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO3.png";
+        stepImage.src = "https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/INVITACION.png";
         textInfo.style.display = 'none'; // Oculta el texto
         step++;
-        downloadLink.style.display = 'block';
+        downloadLink.style.display = 'block'; // Muestra el botón de descarga
       }
     }
   </script>
