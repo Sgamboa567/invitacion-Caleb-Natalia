@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación Boda</title>
+  <title>Invitación de Boda - Caleb y Natalia</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,65 +12,63 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f7f7f7;
+      background-color: rgb(231, 233, 235);
     }
     .envelope {
       position: relative;
-      width: 300px;
-      height: 200px;
-      background: #f8e2c2;
-      border: 2px solid #d1a355;
-      overflow: hidden;
-      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      height: auto;
       cursor: pointer;
-    }
-    .flap {
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      top: 0;
-      left: 0;
-      background: #d1a355;
-      transform-origin: top;
-      transform: rotateX(0deg);
       transition: transform 0.5s ease;
     }
-    .message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      display: none;
-    }
-    .message p {
-      margin: 0;
-      font-size: 18px;
-      color: #333;
-    }
-    .envelope.open .flap {
-      transform: rotateX(-180deg);
-    }
-    .envelope.open .message {
+    .envelope img {
+      width: 100%;
+      border-radius: 10px;
       display: block;
+    }
+    .download-link {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .download-link a {
+      text-decoration: none;
+      color: white;
+      background-color: #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .download-link a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <div class="envelope" onclick="openEnvelope()">
-    <div class="flap"></div>
-    <div class="message">
-      <p>¡Estás invitado/a!</p>
-      <p>Boda de [Nombres]</p>
-      <p>[Fecha y Hora]</p>
-      <p>[Lugar]</p>
-    </div>
+    <img src="https://github.com/tu-repositorio/ruta/PASO1.png" alt="Sobre Cerrado" id="step-image">
+  </div>
+  <div class="download-link" id="download-link">
+    <a href="https://github.com/tu-repositorio/ruta/PASO3.png" download="Invitacion-Caleb-y-Natalia.png">Descargar Invitación</a>
   </div>
 
   <script>
+    let step = 1;
+
     function openEnvelope() {
-      const envelope = document.querySelector('.envelope');
-      envelope.classList.add('open');
+      const stepImage = document.getElementById('step-image');
+      const downloadLink = document.getElementById('download-link');
+
+      if (step === 1) {
+        stepImage.src = "https://github.com/invitacion-Caleb-Natalia/PASO2.png";
+        step++;
+      } else if (step === 2) {
+        stepImage.src = "https://github.com/invitacion-Caleb-Natalia/PASO3.png";
+        step++;
+        downloadLink.style.display = 'block';
+      }
     }
   </script>
 </body>
