@@ -8,6 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column; /* Alinea los elementos verticalmente */
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -44,9 +45,29 @@
     .download-link a:hover {
       background-color: #0056b3;
     }
+
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 768px) {
+      .envelope {
+        width: 100%; /* Ocupa todo el ancho */
+      }
+      .download-link {
+        margin-top: 10px; /* Espacio entre la imagen y el botón */
+      }
+    }
+
+    /* Estilos para el texto */
+    .text-info {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 18px; /* Tamaño del texto */
+      font-weight: bold; /* Texto en negrita */
+      color: rgb(51, 67, 74); /* Color del texto */
+    }
   </style>
 </head>
 <body>
+  <div class="text-info" id="text-info">Toca el sobre para abrirlo</div> 
   <div class="envelope" onclick="openEnvelope()">
     <img src="https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO1.png" alt="Sobre Cerrado" id="step-image">
   </div>
@@ -56,6 +77,7 @@
 
   <script>
     let step = 1;
+    const textInfo = document.getElementById('text-info');
 
     function openEnvelope() {
       const stepImage = document.getElementById('step-image');
@@ -63,6 +85,7 @@
 
       if (step === 1) {
         stepImage.src = "https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO2.png";
+        textInfo.textContent = "Falta un toque más para abrir el sobre"; // Cambia el texto
         step++;
       } else if (step === 2) {
         stepImage.src = "https://raw.githubusercontent.com/sgamboa567/invitacion-Caleb-Natalia/main/PASO3.png";
